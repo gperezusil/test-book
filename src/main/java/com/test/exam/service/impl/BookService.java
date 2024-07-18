@@ -36,7 +36,7 @@ public class BookService implements IBookService {
                     .discountCode(request.getDiscountCode())
                     .build();
             ClientResponse response = serviceClient.bookHouse(requestDiscount);
-            if(Boolean.FALSE.equals(response.getStatus())){
+            if(response == null ||Boolean.FALSE.equals(response.getStatus())){
                 log.error("Invalid discount");
                 throw new ConflictException("Invalid discount");
             }
