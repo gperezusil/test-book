@@ -14,6 +14,9 @@ Este microservicio se encarga de gestionar la reserva de casas. Proporciona un e
 - Se debe crear una bd en local de postgresql cambiando los atributos en al aplication.properties
   spring.datasource.username=tu_usuario
   spring.datasource.password=tu_contraseña
+  
+## Pruebas Unitarias
+Para realizar las pruebas unitarias recorrer el comando  mvn clean test
 
 ## Probar Endpoint 
 curl -X POST "http://localhost:8080/bideafactory/book" \
