@@ -13,9 +13,11 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Request {
+    @Size(min = 9, max = 10, message = "El id debe ser de 8 dígitos numéricos")
     private String id;
 
     @NotBlank(message = "El nombre no puede estar en blanco")
+    @Size(min = 2, max = 50, message = "El nombre debe ser de 2 a 50 dígitos")
     private String name;
 
     @NotBlank(message = "El apellido no puede estar en blanco")
@@ -23,10 +25,10 @@ public class Request {
 
     @NotNull(message = "La edad no puede ser nula")
     @Min(value = 18, message = "La edad mínima debe ser 18")
-    @Max(value = 120, message = "La edad máxima debe ser 120")
+    @Max(value = 100, message = "La edad máxima debe ser 100")
     private Integer age;
 
-    @Pattern(regexp = "\\d{11}", message = "El número de teléfono debe ser de 11 dígitos numéricos")
+    @Size(min = 9, max = 20, message = "El phoneNumber debe ser de 9 a 20 dígitos numéricos")
     private String phoneNumber;
 
     @NotNull(message = "La fecha de inicio no puede ser nula")
@@ -38,7 +40,9 @@ public class Request {
     private Date endDate;
 
     @NotNull(message = "La houseId de fin no puede ser nula")
+    @Size(min = 6, max = 15, message = "El houseId debe ser de 6 a 15 dígitos numéricos")
     private String houseId;
 
+    @Size(min = 8, max = 8, message = "El discountCode debe ser de 8 dígitos numéricos")
     private String discountCode;
 }
